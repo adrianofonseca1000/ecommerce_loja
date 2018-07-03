@@ -1,0 +1,37 @@
+<div ng-init="init()">
+    <div class="row">
+        <div class="col s3">
+            <div class="collection with-header">
+                <li class="collection-header">
+                    <h4>Categorias</h4>
+                </li>
+                <a ng-repeat="c in listaCategorias" href="/#!/categoria/{{c.id}}" class="collection-item">{{c.nome}}</a>
+            </div>
+        </div>
+        <div class="col s9">
+            <h4>Produtos da categoria</h4>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Imagem</th>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="p in listaProdutos">
+                        <td><img src="{{p.imagem}}" class="imagem_tabela"/></td>
+                        <td>{{p.nome}}<br/>
+                            {{p.descricao}}
+                        </td>
+                        <td>{{p.preco}}</td>
+                        <td><button ng-click="adicionarCarrinho(p.categoria_id, p.id)">Adicionar no carrinho</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

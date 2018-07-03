@@ -1,0 +1,21 @@
+<div class="container" ng-init="init()">
+    <div class="col s9">
+        <div class="row">
+            <div class="col s6" ng-repeat="c in listaCategorias">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator imagem_padrao" src="{{c.imagem}}">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">{{c.nome}}<i class="material-icons right">more_vert</i></span>
+                        <p><a href="/#!/categoria/{{c.id}}">Ver produtos</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">{{p.nome}}<i class="material-icons right">close</i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

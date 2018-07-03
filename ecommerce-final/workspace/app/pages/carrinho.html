@@ -1,0 +1,29 @@
+<div>
+    <h4>Minhas compras</h4>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Qtd.</th>
+                <th>Preço</th>
+                <th>Total</th>
+                <th><input type="button" value="Escolher mais produtos" onClick="history.go(-1)"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="p in listaProdutosCarrinho track by $index">
+                <td><img src="{{p.imagem}}" class="imagem_tabela" /></td>
+                <td>{{p.nome}}</td>
+                <td><input type="number" ng-model="p.quantidade" min="1" increase="" /></td>
+                <td>R$ {{p.preco}}</td>
+                <td>R$ {{p.preco * p.quantidade}}</td>
+                <td></td>
+            </tr>
+
+        </tbody>
+        <tfooter>
+
+        </tfooter>
+    </table>
+</div>
